@@ -4,20 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Varun Sharma - Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-50 font-sans">
+  <body class="bg-gray-900 text-white">
     <!-- Navbar -->
-    <nav class="bg-gray-900 text-white py-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Varun Sharma</h1>
-        <ul class="flex space-x-6">
-          <li><a href="#about" class="hover:text-gray-300">About</a></li>
-          <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
-          <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+    <nav
+      class="bg-gray-800 fixed w-full top-0 shadow-lg z-50"
+      aria-label="Main Navigation"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-blue-400">Varun Sharma</h1>
+        <button
+          id="menuToggle"
+          class="md:hidden text-white text-2xl"
+          aria-label="Toggle Menu"
+        >
+          &#9776;
+        </button>
+        <ul class="hidden md:flex space-x-6">
+          <li><a href="#about" class="hover:text-blue-400">About</a></li>
+          <li><a href="#skills" class="hover:text-blue-400">Skills</a></li>
+          <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+          <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-gray-800 p-4">
+        <ul class="space-y-4 text-center">
+          <li>
+            <a href="#about" class="block py-2 hover:text-blue-400">About</a>
+          </li>
+          <li>
+            <a href="#skills" class="block py-2 hover:text-blue-400">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="block py-2 hover:text-blue-400"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="block py-2 hover:text-blue-400"
+              >Contact</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
@@ -25,120 +56,116 @@
     <!-- Hero Section -->
     <section
       id="hero"
-      class="bg-blue-900 text-white h-screen flex flex-col justify-center items-center text-center"
+      class="h-screen flex flex-col justify-center items-center text-center bg-gray-900 px-6"
     >
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Varun Sharma</h2>
-      <p class="text-xl mb-6">Backend Developer & Java Developer</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-blue-400 mb-4">
+        Hi, I'm Varun Sharma
+      </h2>
+      <p class="text-lg md:text-xl text-gray-300 mb-6">
+        Backend Developer & Java Enthusiast
+      </p>
       <a
         href="#contact"
-        class="bg-blue-500 text-white px-6 py-3 rounded-full text-xl"
-        >Contact Me</a
+        class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-full text-lg md:text-xl transition duration-300"
+        >Hire Me</a
       >
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-100">
-      <div class="container mx-auto text-center">
-        <h3 class="text-3xl font-bold mb-8">About Me</h3>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-          I'm a passionate Software developer with expertise in C++, Java. I aim
-          to build innovative, scalable systems that solve real-world problems.
-          With a strong foundation in algorithms and data structures, I enjoy
-          creating efficient solutions. I also have a keen interest in machine
-          learning and AI, striving to push the boundaries of technology.
-        </p>
+    <section id="about" class="py-16 bg-gray-800 text-center px-6">
+      <h3 class="text-3xl font-bold text-blue-400 mb-6">About Me</h3>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        I'm a passionate software developer skilled in C++, Java, and Spring
+        Boot. I build efficient, scalable applications and love problem-solving.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-900 text-center px-6">
+      <h3 class="text-3xl font-bold text-blue-400 mb-6">Skills</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div class="bg-gray-800 p-4 rounded-lg text-lg">Java</div>
+        <div class="bg-gray-800 p-4 rounded-lg text-lg">C++</div>
+        <div class="bg-gray-800 p-4 rounded-lg text-lg">MySQL</div>
+        <div class="bg-gray-800 p-4 rounded-lg text-lg">Spring Boot</div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
-      <div class="container mx-auto text-center">
-        <h3 class="text-3xl font-bold mb-8">My Projects</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-gray-200 p-6 rounded-lg shadow-lg">
-            <h4 class="text-xl font-semibold mb-4">Car Rental Shop (C++)</h4>
-            <p class="text-gray-700 mb-4">
-              A C++ application for managing car rentals, including car
-              inventory, customer data, and rental transactions.
-            </p>
-            <a
-              href="https://github.com/Varunkaushiksharma/CarRentalShop"
-              class="text-blue-500"
-              target="_blank"
-              >View on GitHub</a
-            >
-            <br />
-            <a
-              href="https://github.com/Varunkaushiksharma/CarRentalShop"
-              download
-              class="text-blue-500 mt-4 inline-block"
-              >Download C++ Project</a
-            >
-          </div>
-          <div class="bg-gray-200 p-6 rounded-lg shadow-lg">
-            <h4 class="text-xl font-semibold mb-4">Some Other Projects</h4>
-            <p class="text-gray-700 mb-4">
-              I try different project for practice and check my ability to grow.
-            </p>
-            <a
-              href="https://github.com/Varunkaushiksharma/"
-              class="text-blue-500"
-              >View Project</a
-            >
-          </div>
-          <div class="bg-gray-200 p-6 rounded-lg shadow-lg">
-            <h4 class="text-xl font-semibold mb-4">Portfolio Website</h4>
-            <p class="text-gray-700 mb-4">
-              A responsive portfolio website to showcase my projects and skills
-              using HTML, CSS, and JavaScript.
-            </p>
-            <a href="#" class="text-blue-500">View Project</a>
-          </div>
+    <section id="projects" class="py-16 bg-gray-800 text-center px-6">
+      <h3 class="text-3xl font-bold text-blue-400 mb-6">Projects</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+          <h4 class="text-xl font-semibold text-blue-400">
+            Car Rental Shop (C++)
+          </h4>
+          <p class="text-gray-300 my-4">A car rental system using C++.</p>
+          <a
+            href="https://github.com/Varunkaushiksharma/CarRentalShop"
+            class="text-blue-500"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+          <h4 class="text-xl font-semibold text-blue-400">Other Projects</h4>
+          <p class="text-gray-300 my-4">
+            I work on various projects to enhance my skills.
+          </p>
+          <a href="https://github.com/Varunkaushiksharma/" class="text-blue-500"
+            >View Projects</a
+          >
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+          <h4 class="text-xl font-semibold text-blue-400">Portfolio Website</h4>
+          <p class="text-gray-300 my-4">
+            This modern and responsive portfolio.
+          </p>
+          <a href="#" class="text-blue-500">View Project</a>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-900 text-white">
-      <div class="container mx-auto text-center">
-        <h3 class="text-3xl font-bold mb-8">Get in Touch</h3>
-        <p class="text-xl mb-6">
-          I'm always open to new opportunities and collaborations. Feel free to
-          reach out to me!
-        </p>
+    <section id="contact" class="py-16 bg-gray-900 text-center px-6">
+      <h3 class="text-3xl font-bold text-blue-400 mb-6">Get in Touch</h3>
+      <p class="text-lg text-gray-300 mb-6">
+        Let's work together! Reach out via email.
+      </p>
+      <a
+        href="mailto:kumarvarunsharma26@gmail.com"
+        class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-full text-lg md:text-xl transition duration-300"
+        >Email Me</a
+      >
+      <div class="mt-6 flex justify-center space-x-6">
         <a
-          href="mailto:kumarvarunsharma26@gmail.com"
-          class="bg-blue-500 text-white px-6 py-3 rounded-full text-xl"
-          >Email Me</a
+          href="https://leetcode.com/u/Varu_nSharma/"
+          target="_blank"
+          class="text-blue-400 text-xl"
+          >LeetCode</a
+        >
+        <a
+          href="https://www.linkedin.com/in/varun-sharma-5a6683337"
+          target="_blank"
+          class="text-blue-400 text-xl"
+          >LinkedIn</a
         >
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 text-center">
-      <p>&copy; 2025 Varun Sharma. All Rights Reserved.</p>
+    <footer class="bg-gray-800 text-center py-6">
+      <p class="text-gray-400">
+        &copy; 2025 Varun Sharma. All Rights Reserved.
+      </p>
     </footer>
-    <!-- Mobile menu toggle -->
-    <button id="menuToggle" class="text-white md:hidden">
-      <span class="material-icons">menu</span>
-    </button>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden">
-      <ul class="space-y-4 p-4 bg-gray-800 text-white">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-
+    <!-- JavaScript for Mobile Menu -->
     <script>
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobileMenu").classList.toggle("hidden");
+        });
     </script>
   </body>
 </html>
